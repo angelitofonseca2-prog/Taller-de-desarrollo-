@@ -1,11 +1,47 @@
-# Auth Taller NestJS
+# Frontend Vue.js – Autenticación con JWT
 
-Proyecto desarrollado con NestJS que implementa un sistema completo de autenticación de usuarios utilizando JWT (JSON Web Token). El sistema permite el registro de usuarios con validaciones, control de correos duplicados y almacenamiento seguro de contraseñas mediante bcrypt.
+Aplicación frontend desarrollada con Vue 3 y Vite como parte del taller **Frontend con Vue.js – Login y Registro de Usuarios**.
 
-El proceso de login genera un token JWT que incluye información del usuario como identificador, email, nombre, fecha de emisión y fecha de expiración. Este token es utilizado para proteger rutas del sistema, validándose a través de Passport y JwtStrategy, e inyectándose la información del usuario autenticado en req.user.
+El proyecto consume un backend NestJS con autenticación JWT y demuestra el flujo completo de login, registro, protección de rutas y manejo de sesión en el frontend.
 
-Las rutas protegidas no permiten el acceso sin token o con tokens inválidos, retornando correctamente errores 401 Unauthorized. Con un token válido, el sistema permite acceder a recursos protegidos como el perfil del usuario y rutas de ejemplo.
+---
 
-Todos los endpoints fueron probados utilizando Postman, verificando escenarios de registro válido, errores de validación, login correcto e incorrecto, acceso autorizado y no autorizado a rutas protegidas. El token generado fue verificado externamente en jwt.io, comprobando el algoritmo HS256, el payload y la firma con la clave secreta del proyecto.
+## Tecnologías
 
-Este proyecto corresponde a un taller práctico enfocado en aplicar buenas prácticas de seguridad, autenticación moderna y organización modular en NestJS.
+- Vue 3
+- Vite
+- Vue Router
+- Axios
+- JWT
+- LocalStorage
+- Backend NestJS (API REST)
+
+---
+
+## Funcionalidades
+
+- Registro de usuarios
+- Inicio de sesión
+- Almacenamiento del token JWT
+- Protección de rutas con guards
+- Visualización de perfil del usuario
+- Persistencia de sesión al recargar
+- Cierre de sesión
+
+### Funcionalidades opcionales
+- Recuperación de contraseña (flujo visual)
+- Opción “Recordarme”
+- Tema oscuro / alto contraste
+
+---
+
+## Flujo General
+
+1. El usuario se registra o inicia sesión.
+2. El backend devuelve un access_token.
+3. El token se guarda en localStorage.
+4. Las peticiones protegidas envían el token en el header Authorization.
+5. El usuario accede a su perfil.
+6. Al cerrar sesión, el token se elimina.
+
+Instalar dependencias:
