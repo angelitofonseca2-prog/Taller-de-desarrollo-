@@ -43,5 +43,3 @@ El proyecto consume un backend NestJS con autenticación JWT y demuestra el fluj
 4. Las peticiones protegidas envían el token en el header Authorization.
 5. El usuario accede a su perfil.
 6. Al cerrar sesión, el token se elimina.
-
-Instalar dependencias:
